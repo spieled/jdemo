@@ -14,10 +14,10 @@ ENV CATALINA_HOME /tomcat
 ENV M2_HOME /maven
 
 # INSTALL TOMCAT
-RUN wget -q https://archive.apache.org/dist/tomcat/tomcat-${TOMCAT_MAJOR_VERSION}/v${TOMCAT_MINOR_VERSION}/bin/apache-tomcat-${TOMCAT_MINOR_VERSION}.tar.gz && \
-    wget -qO- https://archive.apache.org/dist/tomcat/tomcat-${TOMCAT_MAJOR_VERSION}/v${TOMCAT_MINOR_VERSION}/bin/apache-tomcat-${TOMCAT_MINOR_VERSION}.tar.gz.md5 | md5sum -c - && \
-    wget -q http://mirrors.cnnic.cn/apache/maven/maven-${MAVEN_MAJOR_VERSION}/${MAVEN_MINOR_VERSION}/binaries/apache-maven-${MAVEN_MINOR_VERSION}-bin.tar.gz && \
-    wget -qO- https://www.apache.org/dist/maven/maven-${MAVEN_MAJOR_VERSION}/${MAVEN_MINOR_VERSION}/binaries/apache-maven-${MAVEN_MINOR_VERSION}-bin.tar.gz.md5 | md5sum -c - && \
+RUN wget --no-check-certificate -q https://archive.apache.org/dist/tomcat/tomcat-${TOMCAT_MAJOR_VERSION}/v${TOMCAT_MINOR_VERSION}/bin/apache-tomcat-${TOMCAT_MINOR_VERSION}.tar.gz && \
+    wget --no-check-certificate -qO- https://archive.apache.org/dist/tomcat/tomcat-${TOMCAT_MAJOR_VERSION}/v${TOMCAT_MINOR_VERSION}/bin/apache-tomcat-${TOMCAT_MINOR_VERSION}.tar.gz.md5 | md5sum -c - && \
+    wget --no-check-certificate -q http://mirrors.cnnic.cn/apache/maven/maven-${MAVEN_MAJOR_VERSION}/${MAVEN_MINOR_VERSION}/binaries/apache-maven-${MAVEN_MINOR_VERSION}-bin.tar.gz && \
+    wget --no-check-certificate -qO- https://www.apache.org/dist/maven/maven-${MAVEN_MAJOR_VERSION}/${MAVEN_MINOR_VERSION}/binaries/apache-maven-${MAVEN_MINOR_VERSION}-bin.tar.gz.md5 | md5sum -c - && \
     tar zxf apache-maven-*-bin.tar.gz && \
     tar zxf apache-tomcat-*.tar.gz && \
     rm apache-tomcat-*.tar.gz && \
