@@ -1,0 +1,1 @@
+[studytrails](http://www.studytrails.com/java/json/java-jackson-introduction.jsp) has good documents for jackson. And many other java related documents.
