@@ -14,7 +14,7 @@ public class MobileRegexApplication {
     private static final String REGEX_STR = "\\d(\\s|\\d|\\p{P}|\\||O|o|〇|一|二|三|四|五|六|七|八|九|零|壹|贰|叁|肆|伍|陆|柒|捌|玖|①|②|③|④|⑤|⑥|⑦|⑧|⑨|~|\\$|`|\\^|=|<|>|～|\\+|￥|×){10,}(?!米)";
 
     public static void main(String[] args) throws SQLException {
-        SshConfig sshConfig = new SshConfig("42.62.59.34", "user", "yHbPIL0OkPtSQgchE4UD", 2201);
+        SshConfig sshConfig = null; // TODO add 有人jumper-config
         PortForwardConfig portForwardConfig = new PortForwardConfig(6384, "10.0.0.43", 6384);
         Session session = JSchUtil.openSshTunnelSession(sshConfig, portForwardConfig);
         if (session == null) {
